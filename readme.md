@@ -1,39 +1,54 @@
-# Unity Shimmer Data Streaming and Visualization
+# 🌳 The Arborist
+**An XR biofeedback project for real-time physiological streaming and immersive visualization**
 
-A Unity project for **real-time streaming, logging, and visualization** of Shimmer sensor data, designed for researchers and Unity developers.
+**The Arborist** is a Unity-based XR project that transforms real-time physiological signals into expressive, interactive digital environments. Originally developed on top of Shimmer sensor streaming infrastructure, the project has evolved into a broader platform for embodied biofeedback, immersive installations, and research-driven XR experiences.
 
-______
-Detailed document WIP
+This repository contains the full Unity project used for development, experimentation, and deployment.
 
 ---
 
-## ✨ Key Features
-✅ **Shimmer GSR3+ Integration** [from [Shimmering-Unity](https://github.com/jemmec/shimmering-unity) by [@jemmec](https://github.com/jemmec)
-]
-- Connect and stream sensor data directly into Unity
+## ✨ Overview
 
-✅ **Data Logging**
-- Record sensor data with **Unix + local timestamps**
-- Export session data to **CSV** for post-analysis
+The Arborist explores how physiological signals (e.g., heart rate, electrodermal activity) can be translated into living digital forms such as growth, motion, and environmental response within immersive XR contexts.
 
-✅ **Real-Time Visualization**
-- Example implementation using Unity's **Particle System**
+The project supports:
 
-## 🚀 Getting Started
+- Real-time biosignal streaming
+- Session-based data logging
+- Expressive visual mappings
+- XR interaction (Meta Quest / OpenXR)
+- Research and installation workflows
 
-### Prerequisites
-- Unity 2021.3+ (Sample project created in 2022.3.60f1)
-- [Shimmer3 Device](https://shimmersensing.com/) (GSR3+ tested)
-- [Shimmer-C-API](https://github.com/ShimmerEngineering/Shimmer-C-API)
+---
 
-### Setup
-1. Clone this repository:
-   ```bash
-   git clone https://github.com/shuwithu/Unity-Shimmer-DataStreaming.git
+## 🌱 Key Features
 
-##  🙏Credits and Thanks
-This project is built upon:
+### ✅ Real-Time Physiological Streaming
+- Live streaming from **Shimmer3 (GSR3+)** devices
+- Modular architecture for extending to additional sensors
 
-- **[Shimmering-Unity](https://github.com/jemmec/shimmering-unity)** by [@jemmec](https://github.com/jemmec)
-- Official **[Shimmer-C-API](https://github.com/ShimmerEngineering/Shimmer-C-API)**
-- PPG-to-HR algorithm from Shimmer's **[Console App Example](https://github.com/ShimmerEngineering/Shimmer-C-API/tree/master/ShimmerPPGHRGSRConsoleAppExample)**
+### ✅ Data Logging & Export
+- Timestamped logging (Unix + local time)
+- Export session data to CSV for offline analysis
+
+### ✅ Biofeedback-Driven Visualization
+- Real-time mapping of physiological signals to visual systems
+- Example implementations include:
+   - Particle systems
+   - Material modulation
+   - Environmental transformation
+
+### ✅ XR-Ready Unity Project
+- Built with **Unity 2022.3 LTS**
+- Compatible with **Meta Quest / OpenXR**
+- Structured for research prototypes, demos, and installation contexts
+
+---
+
+## 👥 Team
+
+- **Shu Wei**
+- **Barnabas Lee**
+- **Michael Gancz**
+- **Asher Marks**
+- **Kimberly Hieftje**
