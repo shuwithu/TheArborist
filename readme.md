@@ -1,4 +1,7 @@
 # 🌳 The Arborist
+
+<img width="1447" height="589" alt="teaser (1)" src="https://github.com/user-attachments/assets/2c7f5c43-e3da-4ab0-abbe-9013a866bfaa" />
+
 **An XR biofeedback project for real-time physiological streaming and immersive visualization**
 
 **The Arborist** is a Unity-based XR project that transforms real-time physiological signals into expressive, interactive digital environments. Originally developed on top of Shimmer sensor streaming infrastructure, the project has evolved into a broader platform for embodied biofeedback, immersive installations, and research-driven XR experiences.
