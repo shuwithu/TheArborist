@@ -1,0 +1,73 @@
+############################
+# Unity generated folders
+############################
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Ll]ogs/
+[Uu]serSettings/
+MemoryCaptures/
+
+############################
+# Build outputs / artifacts
+############################
+[Bb]uild/
+[Bb]uilds/
+*.apk
+*.aab
+*.ipa
+*.unitypackage
+*.zip
+*.7z
+*.rar
+*.log
+
+
+############################
+# Local data / exports (good to keep OUT of git)
+############################
+DataOutput/
+StreamingAssets/DataOutput/
+*.csv
+*.tsv
+
+############################
+# IDE / Editor files
+############################
+.vs/
+.vscode/
+.idea/
+*.sln
+*.csproj
+*.unityproj
+*.user
+*.userprefs
+*.pidb
+*.booproj
+
+############################
+# OS junk
+############################
+.DS_Store
+Thumbs.db
+desktop.ini
+
+############################
+# Crash / logs
+############################
+sysinfo.txt
+crashlytics-build.properties
+
+############################
+# Project-specific ignored assets
+############################
+Assets/MRShuNew/
+Assets/MRShuNew.meta
+
+# Unity auto-imported samples
+Assets/Samples/
+Assets/Samples.meta
+
+# Streaming assets (generated data only)
+Assets/StreamingAssets/DataOutput/
+Assets/StreamingAssets/DataOutput.meta
