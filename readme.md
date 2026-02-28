@@ -19,7 +19,7 @@ The project supports:
 - Real-time biosignal streaming
 - Session-based data logging
 - Expressive visual mappings
-- XR interaction (Meta Quest / OpenXR)
+- XR interaction (Meta Quest/OpenXR)
 - Research and installation workflows
 
 ---
