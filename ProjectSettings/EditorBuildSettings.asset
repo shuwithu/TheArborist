@@ -17,7 +17,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/TheArboristIMXVersion.unity
     guid: cd1f606f9d8a4344c9bca599da69c0e8
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/MRShu.unity
     guid: c75f43713668dff4b9043b4114dfc400
   - enabled: 0

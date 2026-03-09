@@ -1,45 +1,51 @@
 using UnityEngine;
+using Oculus.Interaction;
 
 public class TreeCollapse : MonoBehaviour
 {
-    [Header("Collapse Settings")]
+    [Header("Scale Settings")]
     [Range(0, 1)]
     public float t;
-
-    public float finalScale = 0.001f;          // Final scale at t = 1
-    public float heightPull = 1.2f;            // How much it moves down
+    public float finalScale = 0.001f;
     public AnimationCurve suckCurve = AnimationCurve.EaseInOut(0, 0, 1, 1);
 
-    [Header("Rotation Settings")]
-    public Vector3 rotationAxis = Vector3.up;  // Axis to rotate around
-    public float maxRotationAngle = 360f;      // Total rotation over collapse
-    public AnimationCurve rotationCurve = AnimationCurve.EaseInOut(0, 0, 1, 1);
+    [Header("Collider Settings")]
+    public BoxCollider treeCollider;
+    public Vector3 collapsedSize = new Vector3(0.1f, 0.1f, 0.1f);
+    public Vector3 collapsedCenter = Vector3.zero;
 
     private Vector3 initialScale;
-    private Vector3 initialPosition;
-    private Quaternion initialRotation;
+    private Vector3 initialColliderSize;
+    private Vector3 initialColliderCenter;
 
     void Awake()
     {
         initialScale = transform.localScale;
-        initialPosition = transform.position;
-        initialRotation = transform.rotation;
+
+        if (treeCollider == null)
+            treeCollider = GetComponent<BoxCollider>();
+
+        if (treeCollider != null)
+        {
+            initialColliderSize = treeCollider.size;
+            initialColliderCenter = treeCollider.center;
+        }
     }
 
-    void Update()
+    // LateUpdate is the "Secret Sauce" — it runs after the GrabTransformer
+    void LateUpdate()
     {
-        // --- Evaluate collapse progress ---
         float s = suckCurve.Evaluate(t);
 
-        // --- SCALE ---
-        float scale = Mathf.Lerp(1f, finalScale, s);
-        transform.localScale = initialScale * scale;
+        // 1. Force the Transform Scale
+        float scaleMultiplier = Mathf.Lerp(1f, finalScale, s);
+        transform.localScale = initialScale * scaleMultiplier;
 
-        // --- POSITION OFFSET (downward) ---
-        transform.position = initialPosition - Vector3.up * s * heightPull;
-
-        // --- LIMITED ROTATION ---
-        float rot = rotationCurve.Evaluate(t) * maxRotationAngle; // total rotation based on t
-        transform.rotation = initialRotation * Quaternion.AngleAxis(rot, rotationAxis);
+        // 2. Force the Collider Dimensions
+        if (treeCollider != null)
+        {
+            treeCollider.size = Vector3.Lerp(initialColliderSize, collapsedSize, s);
+            treeCollider.center = Vector3.Lerp(initialColliderCenter, collapsedCenter, s);
+        }
     }
 }
