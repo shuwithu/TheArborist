@@ -5,51 +5,69 @@ public class ResetScript : MonoBehaviour
     [System.Serializable]
     public class ResetEntry
     {
-        public GameObject instanceInScene; // The one currently being moved/changed
-        public GameObject originalPrefab;  // The "Clean" file from your Project window
+        public GameObject instanceInScene; // The object currently in the world
+        public GameObject originalPrefab;  // The clean asset from your Project folder
 
-        // No longer using [HideInInspector] startPos here 
-        // because we want to grab it in real-time.
+        [HideInInspector] public Vector3 checkpointPos;
+        [HideInInspector] public Quaternion checkpointRot;
     }
 
     public ResetEntry[] objectsToReset;
 
     void Awake()
     {
-        // We can keep the log to know the system is ready
-        Debug.Log("Reset System Ready. Press 'R' to swap for fresh prefabs in place.");
+        // On very first start, set Position 0 as the default checkpoint
+        SetCheckpoints();
     }
 
     void Update()
     {
+        // 1. PRESS 'C' TO LOCK IN "POSITION 1"
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            SetCheckpoints();
+        }
+
+        // 2. PRESS 'R' TO RETURN TO THE LAST 'C' POSITION
         if (Input.GetKeyDown(KeyCode.R))
         {
-            ResetAll();
+            ResetToLastCheckpoint();
         }
     }
 
-    public void ResetAll()
+    public void SetCheckpoints()
     {
-        Debug.Log("R Pressed: Replacing objects at current locations...");
+        foreach (var entry in objectsToReset)
+        {
+            if (entry.instanceInScene != null)
+            {
+                entry.checkpointPos = entry.instanceInScene.transform.position;
+                entry.checkpointRot = entry.instanceInScene.transform.rotation;
+            }
+        }
+        Debug.Log("<color=yellow>Checkpoints Saved!</color> Press 'R' to return here.");
+    }
+
+    public void ResetToLastCheckpoint()
+    {
+        Debug.Log("<color=green>Resetting to Checkpoints...</color>");
 
         for (int i = 0; i < objectsToReset.Length; i++)
         {
             ResetEntry entry = objectsToReset[i];
 
-            if (entry.instanceInScene != null && entry.originalPrefab != null)
+            if (entry.originalPrefab != null)
             {
-                // 1. Capture the position RIGHT NOW
-                Vector3 currentPos = entry.instanceInScene.transform.position;
-                // Capture current rotation too, so it doesn't rotate back to default
-                Quaternion currentRot = entry.instanceInScene.transform.rotation;
+                // Destroy the current instance (even if it's at Position 2 or 3)
+                if (entry.instanceInScene != null)
+                {
+                    Destroy(entry.instanceInScene);
+                }
 
-                // 2. Delete the "Dirty" object
-                Destroy(entry.instanceInScene);
+                // Spawn the fresh prefab at the "C" key location (Position 1)
+                GameObject newClone = Instantiate(entry.originalPrefab, entry.checkpointPos, entry.checkpointRot);
 
-                // 3. Spawn the "Clean" prefab at the CURRENT location
-                GameObject newClone = Instantiate(entry.originalPrefab, currentPos, currentRot);
-
-                // 4. Re-link the new clone so the next 'R' press knows which object to kill
+                // Re-link so we can do it again
                 entry.instanceInScene = newClone;
             }
         }

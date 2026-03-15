@@ -154,8 +154,12 @@ MonoBehaviour:
   objectsToReset:
   - instanceInScene: {fileID: 7877934556302666528}
     originalPrefab: {fileID: 1841886943939759525, guid: af496901b9dfea54f82e9dc71eb6edb8, type: 3}
+    checkpointPos: {x: 0, y: 0, z: 0}
+    checkpointRot: {x: 0, y: 0, z: 0, w: 0}
   - instanceInScene: {fileID: 2498353989670505086}
     originalPrefab: {fileID: 4811867929900541137, guid: 457c9e7c05d6e424c81760a892e1c409, type: 3}
+    checkpointPos: {x: 0, y: 0, z: 0}
+    checkpointRot: {x: 0, y: 0, z: 0, w: 0}
 --- !u!4 &170065184
 Transform:
   m_ObjectHideFlags: 0
@@ -6137,13 +6141,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 662919517}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
+  m_LocalRotation: {x: 0.9511788, y: -0.045053434, z: 0.25486752, w: 0.1681417}
   m_LocalPosition: {x: 0.09447756, y: 0.2571983, z: 0.24572754}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+  m_LocalEulerAnglesHint: {x: 159.951, y: -30, z: 0}
 --- !u!1 &686559509
 GameObject:
   m_ObjectHideFlags: 0
@@ -26746,6 +26750,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 23715436608485632, guid: 457c9e7c05d6e424c81760a892e1c409, type: 3}
+      propertyPath: m_TagString
+      value: treebody
+      objectReference: {fileID: 0}
     - target: {fileID: 1205687542717050798, guid: 457c9e7c05d6e424c81760a892e1c409, type: 3}
       propertyPath: objectA
       value: 
@@ -26754,6 +26762,22 @@ PrefabInstance:
       propertyPath: objectB
       value: 
       objectReference: {fileID: 1549999610}
+    - target: {fileID: 1794934233723694293, guid: 457c9e7c05d6e424c81760a892e1c409, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1794934233723694293, guid: 457c9e7c05d6e424c81760a892e1c409, type: 3}
+      propertyPath: m_ReceiveShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3911542544625514233, guid: 457c9e7c05d6e424c81760a892e1c409, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3911542544625514233, guid: 457c9e7c05d6e424c81760a892e1c409, type: 3}
+      propertyPath: m_ReceiveShadows
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4712846964342596862, guid: 457c9e7c05d6e424c81760a892e1c409, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.486
@@ -26797,6 +26821,18 @@ PrefabInstance:
     - target: {fileID: 4811867929900541137, guid: 457c9e7c05d6e424c81760a892e1c409, type: 3}
       propertyPath: m_Name
       value: Tree
+      objectReference: {fileID: 0}
+    - target: {fileID: 5072898750266350366, guid: 457c9e7c05d6e424c81760a892e1c409, type: 3}
+      propertyPath: m_TagString
+      value: treebody
+      objectReference: {fileID: 0}
+    - target: {fileID: 7719886123417220777, guid: 457c9e7c05d6e424c81760a892e1c409, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7834571547487410026, guid: 457c9e7c05d6e424c81760a892e1c409, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

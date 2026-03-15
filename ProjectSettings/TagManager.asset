@@ -6,6 +6,7 @@ TagManager:
   tags:
   - tree
   - LeaveCluster
+  - treebody
   layers:
   - Default
   - TransparentFX
