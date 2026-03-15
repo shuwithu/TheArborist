@@ -62,7 +62,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _Alpha: 1
-    - _AlphaMultiplier: 0.384
+    - _AlphaMultiplier: 1
     - _AlphaMultiplierMax: 1
     - _AlphaMultiplierMin: 0.1
     - _Blend: 1
