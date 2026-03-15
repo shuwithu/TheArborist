@@ -19779,7 +19779,7 @@ MonoBehaviour:
   targetAnimator: {fileID: 0}
   animationTriggerName: Play
   contactAudio: {fileID: 5687501250691475428}
-  contactPrefab: {fileID: 8565411688655427680, guid: 657a038566c9b4f178438fe4fba19f6a, type: 3}
+  contactPrefab: {fileID: 0}
   prefabOffset: {x: 0, y: 0.45, z: 0}
   prefabSpawnDelay: 4
 --- !u!82 &5687501250691475428
